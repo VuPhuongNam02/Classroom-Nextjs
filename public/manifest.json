@@ -4,8 +4,8 @@
     "display": "standalone",
     "scope": "/",
     "start_url": "/",
-    "name": "Classroom",
-    "short_name": "Classroom",
+    "name": "CLASSROOM",
+    "short_name": "CLASSROOM",
     "description": "Liam App",
     "icons": [{
             "src": "/icon-192x192.png",
