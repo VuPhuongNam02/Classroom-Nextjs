@@ -3,6 +3,7 @@ module.exports = {
     extends: ["next", "next/core-web-vitals"],
     rules: {
         indent: "off",
+        "react/display-name": "off",
         "react/jsx-no-useless-fragment": "off",
         "no-nested-ternary": "off",
         "react/no-array-index-key": "off",

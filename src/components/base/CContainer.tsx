@@ -2,7 +2,7 @@ import { forwardRef } from "react";
 import { Container as ChakraContainer, ContainerProps } from "@chakra-ui/react";
 import React from "react";
 
-type Props = {
+type Props = ContainerProps & {
   children: React.ReactNode;
 };
 const CContainer = ({ children, ...props }: Props) => {
