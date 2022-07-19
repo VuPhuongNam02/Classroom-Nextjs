@@ -31,7 +31,13 @@ function MyApp({ Component, pageProps }: AppProps) {
           placeItems="center"
         >
           <div>
-            <Image src="/logo.png" width={200} height={200} />
+            <Image
+              src="/logo.png"
+              width={200}
+              height={200}
+              layout="responsive"
+              alt="description of image"
+            />
             <div className="custom">
               <div className="balls">
                 <div className="ball ball1"></div>

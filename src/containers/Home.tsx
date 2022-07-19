@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import CContainer from "@/components/base/CContainer";
 import CHead from "@/components/base/CHead";
+import { Text } from "@chakra-ui/react";
 
 function Home() {
   return (
@@ -11,7 +12,9 @@ function Home() {
       <CHead />
       <LayoutMain>
         <ColorModeSwitcher />
-        <h1>Co Cai Con Cac</h1>
+        <Text fontSize={50} textAlign="center" fontWeight="bold">
+          Co Cai Con Cac
+        </Text>
       </LayoutMain>
     </>
   );
