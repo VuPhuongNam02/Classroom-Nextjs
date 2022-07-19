@@ -11,7 +11,7 @@ function Home() {
       <LayoutMain>
         <ColorModeSwitcher />
         <Text fontSize={50} textAlign="center" fontWeight="bold">
-          Nam & Lan
+          Co Cai Con Cac
         </Text>
       </LayoutMain>
     </>
