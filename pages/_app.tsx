@@ -1,26 +1,52 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
-import {ChakraProvider} from "@chakra-ui/react";
-
-// 1. Import the extendTheme function
-import { extendTheme } from '@chakra-ui/react'
-
-// 2. Extend the theme to include custom colors, fonts, etc
-const colors = {
-  brand: {
-    900: '#1a365d',
-    800: '#153e75',
-    700: '#2a69ac',
-  },
-}
-
-const theme = extendTheme({ colors })
+import React from "react";
+import type { AppProps } from "next/app";
+import { ChakraProvider } from "@chakra-ui/react";
+import "../styles/globals.css";
+import CContainer from "@/components/base/CContainer";
+import Image from "next/image";
+import CHead from "@/components/base/CHead";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return(
-  <ChakraProvider theme={theme}>
-  <Component {...pageProps} />
-  </ChakraProvider>)
+  const [isLoading, setIsLoading] = React.useState(false);
+
+  React.useEffect(() => {
+    setIsLoading(true);
+
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+  }, []);
+  return (
+    <ChakraProvider>
+      <CHead />
+      {isLoading ? (
+        <CContainer
+          position="fixed"
+          top={0}
+          left={0}
+          bg="rgba(0,0,0,0.4)"
+          width="full"
+          height="full"
+          display="grid"
+          placeItems="center"
+        >
+          <div>
+            <Image src="/logo.png" width={200} height={200} />
+            <div className="custom">
+              <div className="balls">
+                <div className="ball ball1"></div>
+                <div className="ball ball2"></div>
+                <div className="ball ball3"></div>
+              </div>
+              <span className="customText">Loading...</span>
+            </div>
+          </div>
+        </CContainer>
+      ) : (
+        <Component {...pageProps} />
+      )}
+    </ChakraProvider>
+  );
 }
 
-export default MyApp
+export default MyApp;
