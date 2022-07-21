@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
     setTimeout(() => {
       setIsLoading(false);
-    }, 3000);
+    }, 1500);
   }, []);
   return (
     <ChakraProvider>
