@@ -10,30 +10,10 @@ function Home() {
     <>
       <CHead />
       <LayoutMain>
-        <ColorModeSwitcher />
+        {/* <ColorModeSwitcher />
         <Text fontSize={50} textAlign="center" fontWeight="bold">
           Co Cai Con Cac
-        </Text>
-        <Text fontSize={50} textAlign="center" fontWeight="bold">
-          Anh là Trường Đô La đây !
-        </Text>
-        <Center>
-          <a href="">
-            <Image
-              margin={"50px"}
-              borderRadius={"10px"}
-              alignItems={"center"}
-              objectFit="cover"
-              src="/matcac.jpg"
-              alt="Dan Abramov"
-              transition={".3s all"}
-              cursor={"pointer"}
-              _hover={{
-                transform: "scale(1.1)",
-              }}
-            />
-          </a>
-        </Center>
+        </Text> */}
       </LayoutMain>
     </>
   );

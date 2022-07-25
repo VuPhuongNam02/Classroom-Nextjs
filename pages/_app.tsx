@@ -1,10 +1,10 @@
 import React from "react";
 import type { AppProps } from "next/app";
 import { ChakraProvider } from "@chakra-ui/react";
-import "../styles/globals.css";
-import CContainer from "@/components/base/CContainer";
-import Image from "next/image";
 import CHead from "@/components/base/CHead";
+import Loading from "@/components/Loading";
+import { globalStyles } from "@/theme/styles";
+import { customTheme } from "@/theme/theme";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [isLoading, setIsLoading] = React.useState(false);
@@ -17,40 +17,9 @@ function MyApp({ Component, pageProps }: AppProps) {
     }, 1500);
   }, []);
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={customTheme({ globalStyles, colorScheme: "white" })}>
       <CHead />
-      {isLoading ? (
-        <CContainer
-          position="fixed"
-          top={0}
-          left={0}
-          bg="rgba(0,0,0,0.4)"
-          width="full"
-          height="full"
-          display="grid"
-          placeItems="center"
-        >
-          <div>
-            <Image
-              src="/logo.png"
-              width={200}
-              height={200}
-              layout="responsive"
-              alt="description of image"
-            />
-            <div className="custom">
-              <div className="balls">
-                <div className="ball ball1"></div>
-                <div className="ball ball2"></div>
-                <div className="ball ball3"></div>
-              </div>
-              <span className="customText">Loading...</span>
-            </div>
-          </div>
-        </CContainer>
-      ) : (
-        <Component {...pageProps} />
-      )}
+      {isLoading ? <Loading /> : <Component {...pageProps} />}
     </ChakraProvider>
   );
 }
