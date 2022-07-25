@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     }, 1500);
   }, []);
   return (
-    <ChakraProvider theme={customTheme({ globalStyles, colorScheme: "white" })}>
+    <ChakraProvider theme={customTheme({ globalStyles })}>
       <CHead />
       {isLoading ? <Loading /> : <Component {...pageProps} />}
     </ChakraProvider>

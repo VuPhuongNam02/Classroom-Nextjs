@@ -1,8 +1,7 @@
 import React from "react";
 import CContainer from "@/components/base/CContainer";
-import Image from "next/image";
 import { HamburgerIcon } from "@chakra-ui/icons";
-import { Box, Flex, Button, useDisclosure } from "@chakra-ui/react";
+import { Box, Flex, Button, useDisclosure, Img, Text } from "@chakra-ui/react";
 import Sidebar from "./Sidebar";
 import ColorModeSwitcher from "@/components/ColorModeSwitcher";
 
@@ -22,12 +21,16 @@ function LayoutMain({ children }: Props) {
         borderBottom="0.0625rem solid #e0e0e0"
       >
         <CContainer>
-          <Box>
+          <Flex align="center">
             <Button bg="transparent" onClick={onOpen}>
-              <HamburgerIcon w="24px" height="24px" color="gray.F5" />
+              <HamburgerIcon w="24px" height="24px" />
             </Button>
             <Sidebar onClose={onClose} isOpen={isOpen} />
-          </Box>
+            <Img src="/google-logo.png" alt="logo" w="74px" h="24px" />
+            <Text ml=".3rem" fontSize="1.38125rem" marginBottom="1px">
+              Classroom
+            </Text>
+          </Flex>
         </CContainer>
       </Flex>
       <ColorModeSwitcher />
