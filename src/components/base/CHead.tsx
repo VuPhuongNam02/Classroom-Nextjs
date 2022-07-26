@@ -17,10 +17,18 @@ function CHead({ title = "Classroom" }: Props) {
       <link rel="icon" href="/logo.png" />
       <link rel="manifest" href="/manifest.json" />
 
-      <meta property="og:image" itemProp="image" content="/ny.jpg" />
-      <meta property="og:image:secure_url" itemProp="image" content="/ny.jpg" />
+      <meta
+        property="og:image"
+        itemProp="image"
+        content="https://classroom-liam.vercel.app/ny.jpg"
+      />
+      <meta
+        property="og:image:secure_url"
+        itemProp="image"
+        content="https://classroom-liam.vercel.app/ny.jpg"
+      />
       <meta property="og:image:type" content="image/jpg" />
-      <link rel="image_src" href="/ny.jpg" />
+      <link rel="image_src" href="https://classroom-liam.vercel.app/ny.jpg" />
     </Head>
   );
 }
