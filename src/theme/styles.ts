@@ -6,10 +6,21 @@ export const globalStyles = {
         black: "#000000",
         white: "#ffffff",
         gray: {
-            C3: "#3c4043",
+            FA: "#e0e0e0",
             F5: "#5f6368"
         },
-        primary: "#007b83"
+        primary: "#007b83",
+        blue: {
+            ff: "#2962ff",
+            e8: "#e8f0fe"
+        },
+        green: {
+            b3: "#007b83"
+        },
+        hover: {
+            dark: "",
+            light: ""
+        }
     },
     global: (props: any) => ({
         body: {

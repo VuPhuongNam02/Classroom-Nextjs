@@ -1,9 +1,7 @@
-import ColorModeSwitcher from "@/components/ColorModeSwitcher";
 import LayoutMain from "@/layouts/LayoutMain";
 import React from "react";
 import CHead from "@/components/base/CHead";
 import { Center, Image, Text } from "@chakra-ui/react";
-import { transform } from "framer-motion";
 
 function Home() {
   return (

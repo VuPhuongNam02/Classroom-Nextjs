@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
     setTimeout(() => {
       setIsLoading(false);
-    }, 1500);
+    }, 800);
   }, []);
   return (
     <ChakraProvider theme={customTheme({ globalStyles })}>
