@@ -9,26 +9,20 @@ function CHead({ title = "Classroom" }: Props) {
   return (
     <Head>
       <title>{title}</title>
-      <meta property="og:type" content="website" />
+      <link
+        rel="manifest"
+        href="https://classroom-liam.vercel.app/manifest.json"
+      />
+      <meta
+        property="og:image"
+        content="https://classroom-liam.vercel.app/ny.jpg"
+      />
       <meta
         name="description"
         content="App này không phải của Phương Nam đâu !"
       />
-      <link rel="icon" href="/logo.png" />
-      <link rel="manifest" href="/manifest.json" />
-
-      <meta
-        property="og:image"
-        itemProp="image"
-        content="https://classroom-liam.vercel.app/ny.jpg"
-      />
-      <meta
-        property="og:image:secure_url"
-        itemProp="image"
-        content="https://classroom-liam.vercel.app/ny.jpg"
-      />
-      <meta property="og:image:type" content="image/jpg" />
-      <link rel="image_src" href="https://classroom-liam.vercel.app/ny.jpg" />
+      <meta name="keywords" content="Phương Nam yêu Hương Lan" />
+      <link rel="icon" href="https://classroom-liam.vercel.app/logo.png" />
     </Head>
   );
 }
