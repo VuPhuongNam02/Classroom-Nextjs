@@ -1,17 +1,33 @@
 import LayoutMain from "@/layouts/LayoutMain";
 import React from "react";
 import CHead from "@/components/base/CHead";
-import { Center, Image, Text } from "@chakra-ui/react";
+import { Text, Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
+import { HiOutlinePlus } from "react-icons/hi";
 
 function Home() {
   return (
     <>
       <CHead />
-      <LayoutMain>
-        {/* <ColorModeSwitcher />
+      <LayoutMain
+        isLogo={true}
+        isAction={true}
+        title="Classroom"
+        action={
+          <HiOutlinePlus size="24px" />
+          // <Menu>
+          //   <MenuButton>
+          //     <HiOutlinePlus size="24px" />
+          //   </MenuButton>
+          //   <MenuList minWidth="240px">
+          //     <MenuItem>Tham gia lớp học</MenuItem>
+          //     <MenuItem>Tạo lớp học</MenuItem>
+          //   </MenuList>
+          // </Menu>
+        }
+      >
         <Text fontSize={50} textAlign="center" fontWeight="bold">
-          Co Cai Con Cac
-        </Text> */}
+          Home
+        </Text>
       </LayoutMain>
     </>
   );

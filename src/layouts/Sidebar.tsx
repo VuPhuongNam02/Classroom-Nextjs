@@ -38,7 +38,7 @@ const Menu = [
     key: "Giảng dạy",
     title: "Cần đánh giá",
     icon: <TiFolderDelete size="24px" />,
-    href: "/rate",
+    href: "/reviewed",
     isSeparate: true,
     children: [
       {
@@ -113,7 +113,7 @@ function Sidebar({ onClose, isOpen }: Props) {
                 </Link>
                 {item.children &&
                   item.children.map((children, key) => (
-                    <Link key={key} href={children.href} passHref>
+                    <Link key={key} href={children.href}>
                       <FlexWrapp
                         color={activeChild === key ? "light" : ""}
                         background={activeChild === key ? bg : ""}
