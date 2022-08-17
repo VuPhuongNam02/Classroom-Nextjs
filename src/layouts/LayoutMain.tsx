@@ -45,13 +45,29 @@ function LayoutMain({
         padding={{ base: "0 0", lg: "0 1rem" }}
       >
         <Flex align="center">
-          <Button bg="transparent" onClick={onOpen}>
-            <HamburgerIcon w="24px" height="24px" />
+          <Button
+            bg="transparent"
+            onClick={onOpen}
+            paddingRight={{ base: ".5rem" }}
+          >
+            <HamburgerIcon
+              w={{ base: "20px", lg: "24px" }}
+              height={{ base: "20px", lg: "24px" }}
+            />
           </Button>
           {isLogo && (
-            <Img src="/google-logo.png" alt="logo" w="74px" h="24px" />
+            <Img
+              src="/google-logo.png"
+              alt="logo"
+              w={{ base: "50px", lg: "74px" }}
+              h={{ base: "unset", lg: "24px" }}
+            />
           )}
-          <Text ml=".3rem" fontSize="1.38125rem" fontWeight="400">
+          <Text
+            ml=".3rem"
+            fontSize={{ base: "16px", lg: "1.38125rem" }}
+            fontWeight="400"
+          >
             {title}
           </Text>
         </Flex>
@@ -67,21 +83,23 @@ function LayoutMain({
               {action}
             </Button>
           )}
-          <Menu>
-            <MenuButton bg="none" w="40px">
-              <Avatar size="sm" name="Dan Abrahmov" src="/ny.jpg" />
-            </MenuButton>
-            <MenuList>
-              <MenuGroup title="Profile">
-                <MenuItem>My Account</MenuItem>
-                <MenuItem>Payments </MenuItem>
-              </MenuGroup>
-            </MenuList>
-          </Menu>
+          <Box>
+            <Menu>
+              <MenuButton bg="none" w="40px">
+                <Avatar size="sm" name="Dan Abrahmov" src="/ny.jpg" />
+              </MenuButton>
+              <MenuList>
+                <MenuGroup title="Profile">
+                  <MenuItem>My Account</MenuItem>
+                  <MenuItem>Payments </MenuItem>
+                </MenuGroup>
+              </MenuList>
+            </Menu>
+          </Box>
         </Flex>
       </Flex>
       <Sidebar onClose={onClose} isOpen={isOpen} />
-      <CContainer>{children}</CContainer>
+      <CContainer padding={"0 2rem"}>{children}</CContainer>
     </>
   );
 }

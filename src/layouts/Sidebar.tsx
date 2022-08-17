@@ -16,6 +16,7 @@ import {
 } from "@chakra-ui/react";
 import Link from "next/link";
 import styled from "@emotion/styled";
+import { useRouter } from "next/router";
 
 type Props = {
   onClose: () => void;
@@ -69,18 +70,11 @@ const Menu = [
 ];
 
 function Sidebar({ onClose, isOpen }: Props) {
-  const [active, setActive] = React.useState<number | string>(0);
-  const [activeChild, setActiveChild] = React.useState<number>();
+  const router = useRouter();
   const bg = useColorModeValue("teal.100", "teal.400");
 
-  const onChangeActive = (state: string, key: number) => {
-    if (state === "active") {
-      setActive(key);
-      setActiveChild(undefined);
-    } else {
-      setActive("");
-      setActiveChild(key);
-    }
+  const activeColor = (href: string, trueColor: any) => {
+    return href === router.pathname ? trueColor : "";
   };
 
   return (
@@ -103,9 +97,8 @@ function Sidebar({ onClose, isOpen }: Props) {
                 )}
                 <Link href={item.href} passHref>
                   <FlexWrapp
-                    color={active === key ? "light" : ""}
-                    background={active === key ? bg : ""}
-                    onClick={() => onChangeActive("active", key)}
+                    color={activeColor(item.href, "light")}
+                    background={activeColor(item.href, bg)}
                   >
                     {item.icon}
                     {item.title}
@@ -115,9 +108,8 @@ function Sidebar({ onClose, isOpen }: Props) {
                   item.children.map((children, key) => (
                     <Link key={key} href={children.href}>
                       <FlexWrapp
-                        color={activeChild === key ? "light" : ""}
-                        background={activeChild === key ? bg : ""}
-                        onClick={() => onChangeActive("activeChild", key)}
+                        color={activeColor(children.href, "light")}
+                        background={activeColor(children.href, bg)}
                       >
                         <Box
                           w="30px"
