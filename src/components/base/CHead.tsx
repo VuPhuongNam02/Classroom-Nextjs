@@ -15,13 +15,13 @@ function CHead({ title = "Classroom" }: Props) {
       />
       <meta
         property="og:image"
-        content="https://classroom-liam.vercel.app/ny.jpg"
+        content="https://classroom-liam.vercel.app/liam.jpg"
       />
       <meta
         name="description"
         content="App này không phải của Phương Nam đâu !"
       />
-      <meta name="keywords" content="Phương Nam yêu Hương Lan" />
+      <meta name="keywords" content="Liam" />
       <link rel="icon" href="https://classroom-liam.vercel.app/logo.png" />
     </Head>
   );
