@@ -1,7 +1,0 @@
-* {
-    border-radius: 0 2rem 2rem 0;
-    color:`$ {
-        active===key ? "light": ""
-    }
-    `;
-}

@@ -5,6 +5,7 @@ import CHead from "@/components/base/CHead";
 import Loading from "@/components/Loading";
 import { globalStyles } from "@/theme/styles";
 import { customTheme } from "@/theme/theme";
+import "../styles/global.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [isLoading, setIsLoading] = React.useState(false);

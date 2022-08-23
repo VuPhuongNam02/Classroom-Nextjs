@@ -9,6 +9,7 @@ import {
   MenuItem,
   Grid,
   GridItem,
+  SimpleGrid,
 } from "@chakra-ui/react";
 import { HiOutlinePlus } from "react-icons/hi";
 import Card from "@/components/Card";
@@ -27,7 +28,7 @@ function Home() {
               <MenuButton>
                 <HiOutlinePlus size="24px" />
               </MenuButton>
-              <MenuList minWidth="240px">
+              <MenuList placeContent={"flex-start"} minWidth="240px">
                 <MenuItem>Tham gia lớp học</MenuItem>
                 <MenuItem>Tạo lớp học</MenuItem>
               </MenuList>
@@ -39,23 +40,17 @@ function Home() {
           Home
         </Text>
 
-        <Grid templateColumns="repeat(5, 1fr)" gap={6}>
-          <GridItem w="100%">
-            <Card></Card>
-          </GridItem>
-          <GridItem w="100%">
-            <Card></Card>
-          </GridItem>
-          <GridItem w="100%">
-            <Card></Card>
-          </GridItem>
-          <GridItem w="100%">
-            <Card></Card>
-          </GridItem>
-          <GridItem w="100%" h="10">
-            <Card></Card>
-          </GridItem>
-        </Grid>
+        <SimpleGrid
+          columns={{ base: 1, md: 2, lg: 3, xl: 5 }}
+          spacing={10}
+          textAlign="center"
+        >
+          <Card></Card>
+          <Card></Card>
+          <Card></Card>
+          <Card></Card>
+          <Card></Card>
+        </SimpleGrid>
       </LayoutMain>
     </>
   );

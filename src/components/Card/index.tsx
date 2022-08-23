@@ -28,7 +28,7 @@ function Card() {
 
   return (
     <Box
-      maxW="sm"
+      maxW="100%"
       borderWidth="1px"
       borderRadius="lg"
       overflow="hidden"
@@ -38,7 +38,7 @@ function Card() {
       }}
     >
       <Box
-        h={"110px"}
+        h={{ base: "95px", lg: "110px" }}
         backgroundImage={`url(${property.imageUrl})`}
         backgroundPosition="center"
         backgroundRepeat="no-repeat"
@@ -55,7 +55,7 @@ function Card() {
         >
           <Link href={"/"} passHref>
             <Text
-              fontSize="1.375rem"
+              fontSize={{ base: "16px", lg: "1.375rem" }}
               fontStyle="400"
               lineHeight="1.75rem"
               color="white"
@@ -85,7 +85,7 @@ function Card() {
       <Box p="6">
         <Box display="flex" alignItems="baseline">
           <Box
-            h="117px"
+            h={{ base: "100px", lg: "117px" }}
             color="gray.500"
             fontWeight="semibold"
             letterSpacing="wide"
