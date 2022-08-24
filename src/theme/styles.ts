@@ -1,5 +1,3 @@
-import { mode } from '@chakra-ui/theme-tools'
-
 export const globalStyles = {
     colors: {
         transparent: "transparent",
@@ -9,6 +7,8 @@ export const globalStyles = {
             FA: "#e0e0e0",
             F5: "#5f6368"
         },
+        grayBg: "#171923",
+        grayCard: "#2D3748",
         primary: "#007b83",
         blue: {
             ff: "#2962ff",
@@ -22,20 +22,21 @@ export const globalStyles = {
             light: ""
         }
     },
-    global: (props: any) => ({
-        body: {
-            bg: mode("white", "gray.800")(props),
-            fontFamily: `'Roboto', sans-serif`,
-            color: "rgba(0,0,0,.87)",
-        },
-        button: {
-            fontFamily: `'Roboto', sans-serif`,
-        },
-    }),
+
     heading: {
         fontFamily: `'Roboto', sans-serif`,
     },
     fonts: {
         heading: `'Roboto', sans-serif`,
     },
+    styles: {
+        global: (props: any) => ({
+            body: {
+                fontFamily: `'Roboto', sans-serif`
+            },
+            button: {
+                fontFamily: `'Roboto', sans-serif`,
+            },
+        }),
+    }
 }

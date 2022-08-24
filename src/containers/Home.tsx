@@ -13,6 +13,7 @@ import {
 } from "@chakra-ui/react";
 import { HiOutlinePlus } from "react-icons/hi";
 import Card from "@/components/Card";
+import CContainer from "@/components/base/CContainer";
 
 function Home() {
   return (
@@ -36,21 +37,23 @@ function Home() {
           </>
         }
       >
-        <Text fontSize={50} textAlign="center" fontWeight="bold">
-          Home
-        </Text>
+        <CContainer>
+          <Text fontSize={50} textAlign="center" fontWeight="bold">
+            Home
+          </Text>
 
-        <SimpleGrid
-          columns={{ base: 1, md: 2, lg: 3, xl: 5 }}
-          spacing={10}
-          textAlign="center"
-        >
-          <Card></Card>
-          <Card></Card>
-          <Card></Card>
-          <Card></Card>
-          <Card></Card>
-        </SimpleGrid>
+          <SimpleGrid
+            columns={{ base: 1, md: 2, lg: 3, xl: 5 }}
+            spacing={10}
+            textAlign="center"
+          >
+            <Card></Card>
+            <Card></Card>
+            <Card></Card>
+            <Card></Card>
+            <Card></Card>
+          </SimpleGrid>
+        </CContainer>
       </LayoutMain>
     </>
   );

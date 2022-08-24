@@ -44,12 +44,8 @@ function LayoutMain({
         borderBottom="0.0625rem solid #e0e0e0"
         padding={{ base: "0 0", lg: "0 1rem" }}
       >
-        <Flex align="center">
-          <Button
-            bg="transparent"
-            onClick={onOpen}
-            paddingRight={{ base: ".5rem" }}
-          >
+        <Flex alignItems="center">
+          <Button bg="transparent" onClick={onOpen} w="0">
             <HamburgerIcon
               w={{ base: "20px", lg: "24px" }}
               height={{ base: "20px", lg: "24px" }}
@@ -86,7 +82,7 @@ function LayoutMain({
           <Box>
             <Menu>
               <MenuButton bg="none" w="40px">
-                <Avatar size="sm" name="Dan Abrahmov" src="/ny.jpg" />
+                <Avatar size="sm" name="Dan Abrahmov" src="/liam.jpg" />
               </MenuButton>
               <MenuList>
                 <MenuGroup title="Profile">
@@ -99,7 +95,7 @@ function LayoutMain({
         </Flex>
       </Flex>
       <Sidebar onClose={onClose} isOpen={isOpen} />
-      <CContainer padding={"0 2rem"}>{children}</CContainer>
+      <CContainer p="0">{children}</CContainer>
     </>
   );
 }
