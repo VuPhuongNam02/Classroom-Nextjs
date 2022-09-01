@@ -1,5 +1,5 @@
 import CContainer from "@/components/base/CContainer";
-import { Box, useDisclosure } from "@chakra-ui/react";
+import { Box, useColorModeValue, useDisclosure } from "@chakra-ui/react";
 import React from "react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import {
@@ -20,7 +20,7 @@ import Sidebar from "./Sidebar";
 type Props = {
   children: React.ReactNode;
   isLogo?: boolean;
-  title: string;
+  title: string | string[] | undefined;
   middleNav?: React.ReactNode;
   action?: React.ReactNode;
   isAction?: boolean;
@@ -35,13 +35,18 @@ function LayoutMain({
   middleNav = "",
 }: Props) {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const borderColor = useColorModeValue(
+    "0.0625rem solid #e0e0e0",
+    "0.0625rem solid rgba(255, 255, 255, 0.16)"
+  );
+
   return (
     <>
       <Flex
         height="4rem"
         justifyContent="space-between"
         alignItems="center"
-        borderBottom="0.0625rem solid #e0e0e0"
+        borderBottom={borderColor}
         padding={{ base: "0 0", lg: "0 1rem" }}
       >
         <Flex alignItems="center">
