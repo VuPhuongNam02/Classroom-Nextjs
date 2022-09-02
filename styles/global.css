@@ -27,11 +27,25 @@ body::-webkit-scrollbar-thumb {
     max-width: 600px !important;
 }
 
+.bottom-nav {
+    display: none;
+}
+
+.middle-nav {
+    display: block;
+}
+
 
 /* .modal-code {} */
 
 @media (max-width: 40em) {
     .chakra-modal__content {
         max-width: 350px !important;
+    }
+    .middle-nav {
+        display: none;
+    }
+    .bottom-nav {
+        display: block;
     }
 }

@@ -1,7 +1,8 @@
 import CContainer from "@/components/base/CContainer";
 import CHead from "@/components/base/CHead";
+import TabNavigation from "@/components/TabNavigation";
 import LayoutMain from "@/layouts/LayoutMain";
-import { Tab, TabList, Tabs, useColorModeValue } from "@chakra-ui/react";
+import { useColorModeValue } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 
@@ -42,8 +43,6 @@ const ClassDetail = () => {
   const tab = router?.query?.tab;
   const slug = router?.query?.slug;
 
-  const colorTab = useColorModeValue("primary", "teal.300");
-
   const onChangeTab = (index: number) => {
     tabs.map((tabs, indexTab) => {
       if (indexTab === index) {
@@ -79,31 +78,9 @@ const ClassDetail = () => {
       <CHead title={renderTab(tab, "ok")} />
       <LayoutMain
         isLogo={false}
-        middleNav={
-          <Tabs
-            onChange={(index: number) => onChangeTab(index)}
-            defaultIndex={0}
-            defaultValue={0}
-          >
-            <TabList h="60px" borderBottom="unset">
-              {tabs.map((tab) => (
-                <Tab
-                  fontWeight="500"
-                  fontSize="14px"
-                  letterSpacing=".01785714em"
-                  _selected={{
-                    color: colorTab,
-                    borderBottom: "3px solid #007b83",
-                  }}
-                  key={tab.key}
-                >
-                  {tab.name}
-                </Tab>
-              ))}
-            </TabList>
-          </Tabs>
-        }
+        middleNav={<TabNavigation onChangeTab={onChangeTab} tabs={tabs} />}
         title={slug}
+        bottomNav={<TabNavigation onChangeTab={onChangeTab} tabs={tabs} />}
       >
         <CContainer
           minW="18.75rem"
