@@ -1,19 +1,21 @@
 import CContainer from "@/components/base/CContainer";
-import { Box, useColorModeValue, useDisclosure } from "@chakra-ui/react";
-import React from "react";
-import { HamburgerIcon } from "@chakra-ui/icons";
 import {
-  Flex,
-  Button,
-  Img,
-  Text,
   Avatar,
+  Box,
+  Button,
+  Flex,
+  Img,
   Menu,
   MenuButton,
-  MenuList,
-  MenuItem,
   MenuGroup,
+  MenuItem,
+  MenuList,
+  Text,
+  useColorModeValue,
+  useDisclosure,
 } from "@chakra-ui/react";
+import React from "react";
+import { HamburgerIcon } from "@chakra-ui/icons";
 import ColorModeSwitcher from "@/components/ColorModeSwitcher";
 import Sidebar from "./Sidebar";
 
@@ -53,7 +55,7 @@ function LayoutMain({
         borderBottom={borderColor}
         padding={{
           base: ".8rem .5rem",
-          lg: "0 1rem",
+          lg: bottomNav !== "" ? "0 1rem" : ".8rem 1rem",
         }}
       >
         <Flex justifyContent="space-between" alignItems="center">
