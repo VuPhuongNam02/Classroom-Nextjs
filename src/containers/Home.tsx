@@ -2,14 +2,12 @@ import LayoutMain from "@/layouts/LayoutMain";
 import React from "react";
 import CHead from "@/components/base/CHead";
 import {
-  Text,
   Menu,
   MenuButton,
-  MenuList,
   MenuItem,
-  Grid,
-  GridItem,
+  MenuList,
   SimpleGrid,
+  Text,
 } from "@chakra-ui/react";
 import { HiOutlinePlus } from "react-icons/hi";
 import Card from "@/components/Card";
